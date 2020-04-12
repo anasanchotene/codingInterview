@@ -38,12 +38,26 @@ public class LinkedList {
         return list;
     }
 
+    public static Node returnNode (LinkedList list, int location) {
+        int i = 1;
+        Node runner = list.head;
+
+        while (i != location){
+            i++;
+            runner = runner.next;
+        }
+
+        return runner;
+    }
+
     public static int length (LinkedList list) {
         int size = 0;
         Node listHead = list.head;
 
-        while (listHead.next != null)
+        while (listHead != null) {
             size++;
+            listHead = listHead.next;
+        }
 
         return size;
     }
