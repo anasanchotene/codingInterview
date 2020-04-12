@@ -49,7 +49,7 @@ public class ZeroMatrix {
 
     }
 
-    // Function to print the matrix - 
+    // Function to print the matrix -
     static void displayMatrix(int N, int matrix[][])
     {
         for (int i = 0; i < N; i++) {
