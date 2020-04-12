@@ -91,4 +91,16 @@ public class LinkedList {
             currNode = currNode.next;
         }
     }
+
+    //worked but eternal loop when working node is from the list we are trying to use :(
+    public static void reuseNode (LinkedList list, Node node){
+        Node runner = list.head;
+
+        while(runner.next != null) runner = runner.next;
+
+        runner.next = node;
+
+        //printList(list);
+
+    }
 }
