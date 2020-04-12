@@ -8,11 +8,14 @@ public class Partition {
         LinkedList.Node auxNode = list.head;
 
         while (auxNode != null) {
-            if (auxNode. data > value)
+            if (auxNode.data < value)
                 LinkedList.insert(beforeValue, auxNode.data);
             else
                 LinkedList.insert(afterValue, auxNode.data);
+
+            auxNode = auxNode.next;
         }
+
 
         LinkedList.Node beforeLastNode = beforeValue.head;
 
@@ -20,9 +23,27 @@ public class Partition {
             beforeLastNode = beforeLastNode.next;
         }
 
-        beforeLastNode.next = afterValue.head;
+         beforeLastNode.next = afterValue.head;
 
         return beforeValue;
     }
+
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+
+        LinkedList.insert(list, 6);
+        LinkedList.insert(list, 1);
+        LinkedList.insert(list, 2);
+        LinkedList.insert(list, 5);
+        LinkedList.insert(list, 6);
+        LinkedList.insert(list, 3);
+        LinkedList.insert(list, 4);
+        LinkedList.insert(list, 3);
+        LinkedList.insert(list, 5);
+        LinkedList.insert(list, 6);
+
+        LinkedList.printList(partition(list, 4));
+    }
+
 
 }
